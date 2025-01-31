@@ -1,3 +1,6 @@
+/**
+ * radio road barrier
+ */
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 1) {
         servos.P0.setAngle(70)
@@ -10,7 +13,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . # . .
             `)
     } else if (receivedNumber == 2) {
-        servos.P0.setAngle(5)
+        servos.P0.setAngle(0)
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         basic.showLeds(`
             . . # . .
@@ -21,11 +24,10 @@ radio.onReceivedNumber(function (receivedNumber) {
             `)
     } else {
         strip.clear()
+        strip.showColor(neopixel.hsl(0, 0, 0))
+        basic.clearScreen()
     }
 })
-/**
- * radio road barrier
- */
 let strip: neopixel.Strip = null
 strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
 radio.setGroup(1)
