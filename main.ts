@@ -1,6 +1,6 @@
 radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 1) {
-        servos.P0.setAngle(90)
+        servos.P0.setAngle(70)
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
         basic.showLeds(`
             . . # . .
@@ -9,8 +9,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . . # . .
             . . # . .
             `)
-    } else {
-        servos.P0.setAngle(0)
+    } else if (receivedNumber == 2) {
+        servos.P0.setAngle(5)
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         basic.showLeds(`
             . . # . .
@@ -19,6 +19,8 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # # # .
             . . # . .
             `)
+    } else {
+        strip.clear()
     }
 })
 /**
