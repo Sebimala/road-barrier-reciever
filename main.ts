@@ -30,5 +30,5 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 let strip: neopixel.Strip = null
 strip = neopixel.create(DigitalPin.P2, 10, NeoPixelMode.RGB)
-radio.setGroup(1)
+radio.setGroup(3)
 strip.clear()
